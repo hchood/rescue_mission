@@ -40,7 +40,22 @@ feature "user posts a question", %Q{
     expect(Question.count).to eq prev_count + 1
   end
 
-  scenario "missing required attributes"
+  scenario "missing required attributes" do
+    prev_count = Question.count
+
+    visit new_question_path
+    click_on 'Create Question'
+
+    expect(page).to have_content "Error!"
+    expect(page).to have_content "can't be blank"
+    expect(page).to have_content "Post a question!"
+    expect(Question.count).to eq prev_count
+  end
 
   scenario "title and description too short"
 end
+
+
+
+
+

@@ -12,6 +12,9 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:notice] = "Success!"
       redirect_to questions_path
+    else
+      flash.now[:notice] = "Error!"
+      render :new
     end
   end
 
