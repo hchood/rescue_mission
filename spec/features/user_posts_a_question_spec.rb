@@ -52,7 +52,19 @@ feature "user posts a question", %Q{
     expect(Question.count).to eq prev_count
   end
 
-  scenario "title and description too short"
+  scenario "title and description too short" do
+    prev_count = Question.count
+
+    visit new_question_path
+    fill_in 'Title', with: 'rails'
+    fill_in 'Description', with: 'something'
+    click_on 'Create Question'
+
+    expect(page).to have_content "Error!"
+    expect(page).to have_content "too short"
+    expect(page).to have_content "Post a question!"
+    expect(Question.count).to eq prev_count
+  end
 end
 
 
