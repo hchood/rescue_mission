@@ -1,0 +1,9 @@
+<h3>All Questions</h3>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li>
+      <%= "Title: #{question.title}; Description: #{question.description}" %>
+    </li>
+  <% end %>
+</ul>
