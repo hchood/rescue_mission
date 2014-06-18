@@ -32,7 +32,7 @@ feature "user posts a question", %Q{
 
     fill_in 'Title', with: attrs[:title]
     fill_in 'Description', with: attrs[:description]
-    click_on 'Create Post'
+    click_on 'Create Question'
 
     expect(page).to have_content "Success!"
     expect(page).to have_content attrs[:title]
