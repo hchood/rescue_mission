@@ -15,14 +15,11 @@ feature "user posts a question", %Q{
     attrs = {
       title: "I have a really long question about Rails",
       description: %Q{
-        Flannel you probably haven't heard of them Helvetica
-        PBR&B VHS. Wes Anderson kale chips authentic pour-over
-        four loko, plaid pug meggings umami crucifix Shoreditch
-        selvage Portland cray. PBR pug cliche tote bag, hashtag
-        hoodie chambray lomo fanny pack Pitchfork deep v butcher.
-        Selfies lomo shabby chic literally, hashtag fap brunch.
-        Cliche keffiyeh ethical post-ironic, 3 wolf moon messenger
-        bag Godard stumptown High Life pop-up YOLO letterpress Pinterest cornhole.
+        What, you think this isn't real just because of all the vampires,
+        and demons, and ex-vengeance demons, and the sister that used to
+        be a big ball of universe-destroying energy? It was the pioneer
+        days; people had to make their own interrogation rooms. Out of
+        cornmeal. Frankly, it's ludicrous to have these interlocking bodies
       }
      }
 
