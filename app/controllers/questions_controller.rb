@@ -38,6 +38,17 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      flash[:notice] = "Your question has been destroyed."
+      redirect_to questions_path
+    else
+      flash.now[:notice] = "Error! couldn't delete your question."
+      render :edit
+    end
+  end
+
   private
 
   def question_params
