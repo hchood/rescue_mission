@@ -8,6 +8,10 @@
   <%= button_to 'Edit', edit_question_path(@question), method: 'get' %>
 </div>
 
+<div>
+  <%= button_to 'Delete', question_path(@question), method: 'delete', data: { confirm: 'Are you sure?' } %>
+</div>
+
 <h3>Post an answer:</h3>
 
 <%= form_for [@question, @answer] do |f| %>
