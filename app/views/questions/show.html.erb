@@ -25,3 +25,11 @@
     <%= f.submit 'Submit' %>
   </div>
 <% end %>
+
+<h3>All answers</h3>
+
+<% @question.answers.order(created_at: :desc).each do |answer| %>
+  <div>
+    <%= "#{answer.description} (Posted at #{answer.created_at})" %>
+  </div>
+<% end %>
