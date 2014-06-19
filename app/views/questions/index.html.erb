@@ -3,7 +3,8 @@
 <ul>
   <% @questions.each do |question| %>
     <li>
-      <%= "Title: #{question.title}; Description: #{question.description}" %>
+      Title: <%= link_to question.title, question_path(question) %>;
+      <%= "Description: #{question.description}" %>
     </li>
   <% end %>
 </ul>
