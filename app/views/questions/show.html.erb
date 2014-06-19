@@ -4,6 +4,10 @@
   <%= @question.description %>
 </div>
 
+<div>
+  <%= button_to 'Edit', edit_question_path(@question), method: 'get' %>
+</div>
+
 <h3>Post an answer:</h3>
 
 <%= form_for [@question, @answer] do |f| %>
