@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'launchy'
   gem 'orderly'
+  gem 'dotenv-rails'
 end
 
 # Use ActiveModel has_secure_password
