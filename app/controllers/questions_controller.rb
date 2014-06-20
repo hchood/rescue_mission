@@ -9,6 +9,22 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
+      flash[:notice] = "Success!"
+      redirect_to @question
+    else
+      flash[:notice] = "Error!"
+      render :edit
+    end
   end
 
   def create
@@ -19,6 +35,17 @@ class QuestionsController < ApplicationController
     else
       flash.now[:notice] = "Error!"
       render :new
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      flash[:notice] = "Your question has been destroyed."
+      redirect_to questions_path
+    else
+      flash.now[:notice] = "Error! couldn't delete your question."
+      render :edit
     end
   end
 

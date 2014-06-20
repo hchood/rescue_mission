@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<nav>
+  <ul>
+    <% if !current_user %>
+      <li><%= link_to "Sign in with GitHub", '/auth/github' %></li>
+    <% else %>
+      <li><%= link_to "Sign Out", signout_path, method: :delete %></li>
+    <% end %>
+  </ul>
+</nav>
+
 <p><%= notice %></p>
 
 <%= yield %>
