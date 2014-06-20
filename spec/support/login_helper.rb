@@ -1,3 +1,8 @@
+# This module is a helper for our feature specs.
+# We only need it to test OmniAuth, not to make OmniAuth work.
+# We need to include it in the rails_helper file to get access to it
+# in our tests.
+
 module LoginHelper
   def set_omniauth(user)
     # tell OmniAuth to redirect back to callback path immediately
