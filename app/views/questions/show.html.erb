@@ -4,9 +4,11 @@
   <%= @question.description %>
 </div>
 
-<div>
-  <%= button_to 'Edit', edit_question_path(@question), method: 'get' %>
-</div>
+<% if current_user == @question.author %>
+  <div>
+    <%= button_to 'Edit', edit_question_path(@question), method: 'get' %>
+  </div>
+<% end %>
 
 <div>
   <%= button_to 'Delete', question_path(@question), method: 'delete', data: { confirm: 'Are you sure?' } %>

@@ -56,7 +56,7 @@ feature "user edits a question", %Q{
         click_on 'Sign in with GitHub'
         visit question_path(question)
 
-        expect(page).to_not have_content 'Edit'
+        expect(page).not_to have_button 'Edit'
       end
     end
   end
