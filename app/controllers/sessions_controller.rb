@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
     redirect_to questions_path
   end
 
+  def destroy
+    session[:user_id] = nil #DESTROY!!!!!
+    redirect_to questions_path, notice: 'Signed out!'
+  end
+
   protected
 
   def auth_hash
